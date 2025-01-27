@@ -4,9 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="icon" type="image/png" href="/logo.png"/>
+  <link rel="shortcut icon" href="/logo.png"/>
 </head>
 <body>
-  
+  <div class="diagonal-left-glow"></div>
+  <div class="menu" id="menu">
+    <div class="grid">
+        <div class="icon home">
+            <img src="/logo.png">
+        </div>
+            <div class="icon settings">
+              <i class="fa-regular fa-gear"></i>
+            </div>
+        <div onclick="window.location.href='/movies.html'" id="launchApps" class="icon movie">
+          <i class="fa-regular fa-film"></i>
+        </div>
+    </div>
+</div>
+<h1 style="padding:10px;position:absolute;top:40vh;font-size:7vh;">Watching movies; The right way.</h1>  
 </body>
 <script>
       document.addEventListener('DOMContentLoaded', () => {
