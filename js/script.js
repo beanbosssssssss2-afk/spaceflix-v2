@@ -37,26 +37,24 @@ function renderMovies(movies) {
   movies.forEach((movie) => {
     const movieCard = document.createElement("div");
     movieCard.classList.add("movie-card");
+    movieCard.addEventListener("click", () => {
+      window.location.href = `player.html?movieid=${movie.id}`;
+    });
 
     const poster = document.createElement("img");
     poster.src = movie.poster_path
       ? `${POSTER_BASE_URL}${movie.poster_path}`
       : "https://via.placeholder.com/200x300?text=No+Image";
     poster.alt = movie.title;
+    poster.onerror = function () {
+      this.src = '/imagenotfound.png';
+    };
 
     const title = document.createElement("h3");
     title.textContent = movie.title;
 
-    const playButton = document.createElement("button");
-    playButton.textContent = "Watch Now";
-    playButton.classList.add("play-button");
-    playButton.addEventListener("click", () => {
-      window.location.href = `player.html?movieid=${movie.id}`;
-    });
-
     movieCard.appendChild(poster);
     movieCard.appendChild(title);
-    movieCard.appendChild(playButton);
     movieResults.appendChild(movieCard);
   });
 

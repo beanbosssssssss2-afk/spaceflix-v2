@@ -38,10 +38,12 @@ body {
     border: none;
     border-radius: 5px;
     margin-bottom: 20px;
+    transition:0.5s;
   }
   
   input#movie-search:focus {
-    outline: 2px solid #ff6347;
+    transform: scale(1.1);
+    outline:none;
   }
   
   .movie-results {
@@ -69,7 +71,7 @@ body {
   
   .movie-card img {
     width: 100%;
-    height: auto;
+    height: 330px;
     border-radius: 5px;
   }
   
@@ -92,7 +94,6 @@ body {
     background-color: #e5533d;
   }
   
-  /* Player Page Styles */
   .video-container {
     display: flex;
     justify-content: center;
@@ -165,34 +166,6 @@ body {
     margin: 10px 0;
   }
   
-  button.play-button {
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  button.play-button:hover {
-    background-color: #e5533d;
-  }
-  
-  .tv-card .play-button {
-    background-color: #ff4081;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em;
-  }
-  
-  .tv-card .play-button:hover {
-    background-color: #fff;
-  }
   
   #season-container,
   #episode-container {

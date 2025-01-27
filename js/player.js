@@ -11,26 +11,26 @@ const queryParams = new URLSearchParams(window.location.search);
       iframeElement.allowFullscreen = true;
 
       switch (provider) {
-        case "Vidlink PRO":
+        case "vidlinkpro":
           iframeElement.src = `https://www.vidlink.pro/movie/${movieId}?autoplay=false`;
           break;
-        case "Movie Embed":
+        case "embed-su":
           iframeElement.src = `https://embed.su/embed/movie/${movieId}`;
           break;
-        case "MoviesAPI":
+        case "moviesapiclub":
           iframeElement.src = `https://moviesapi.club/movie/${movieId}`;
           break;
-        case "VidBinge":
+        case "vidbinge":
           iframeElement.src = `https://vidbinge.dev/embed/movie/${movieId}`;
           break;
-        case "VidSRC.net":
+        case "vidsrcnet":
           iframeElement.src = `https://vidsrc.net/embed/${movieId}`;
           break;
         case "2embed":
           iframeElement.src = `https://www.2embed.skin/embed/${movieId}`;
           break;
         default:
-          iframeElement.src = "";
+          iframeElement.src = `https://www.vidlink.pro/movie/${movieId}?autoplay=false`;
       }
 
       videoContainer.innerHTML = "";
