@@ -2,8 +2,7 @@
     position: fixed;
     left: 50%;
     top: 5%;
-    width: 30vw;
-    height: 50px;
+    width: 40vh;
     transform: translateX(-50%);
     background-color: rgb(37, 1, 67);
     padding: 10px;
