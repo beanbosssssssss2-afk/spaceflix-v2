@@ -1,9 +1,13 @@
 [
     { "name": "ABC News", "url": "https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8" },
     { "name": "NBC Live", "url": "https://livetv-fa.tubi.video/nbc-news-now/master.m3u8" },
-    { "name": "NickToons", "url": "https://fl1.moveonjoy.com/NICKELODEON/index.m3u8" },
+    { "name": "Nickelodeon", "url": "https://fl1.moveonjoy.com/NICKELODEON/index.m3u8" },
+    { "name": "NickToons", "url": "https://fl1.moveonjoy.com/NICKTOONS/index.m3u8" },
+    { "name": "Disney XD", "url": "https://fl5.moveonjoy.com/DISNEY_XD/index.m3u8" },
     { "name": "Disney Channel", "url": "https://fl5.moveonjoy.com/DISNEY_CHANNEL/index.m3u8" },
     { "name": "Adult Swim: Rick and morty", "url": "https://adultswim-vodlive.cdn.turner.com/live/rick-and-morty/stream.m3u8" },
     { "name": "Adult Swim: Black Jesus", "url": "https://adultswim-vodlive.cdn.turner.com/live/black-jesus/stream.m3u8" },
-    { "name": "ConTV Anime", "url": "https://contvanime-roku-ingest.cinedigm.com/master.m3u8" }
+    { "name": "ConTV Anime", "url": "https://contvanime-roku-ingest.cinedigm.com/master.m3u8" },
+    { "name": "Paramount Network", "url": "https://fl2.moveonjoy.com/PARAMOUNT_NETWORK/index.m3u8" },
+    { "name": "PBS Kids", "url": "https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8" }
 ]
