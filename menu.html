@@ -14,9 +14,17 @@
             width:200px;
             height:200px;
             box-shadow:0px 0px 10px white;
+            border-radius:10px;
+            cursor:pointer;
         }
         .img-card {
-            
+            background:rgb(40, 40, 40);
+            width:250px;
+            height:auto;
+            padding:10px;
+            box-sizing:border-box;
+            border-radius:5px;
+            cursor:pointer;
         }
     </style>
 </head>
@@ -27,9 +35,19 @@
     <br>
     <center>
     <h1>What do you feel like watching today?</h1>
-    <div class="img-card">
-    <img src="/image/series.png">
+    <div style="flex-wrap:wrap;display:flex;justify-content:center;gap:20px;">
+    <div class="img-card" onclick="window.location.href='/series.html'">
+    <img src="/image/series.jpg">
     <p>Series</p>
+</div>
+<div class="img-card" onclick="window.location.href='/live.html'">
+    <img src="/image/live.png">
+    <p>Live TV</p>
+</div>
+<div class="img-card" onclick="window.location.href='/movies.html'">
+    <img src="/image/popcorn.png">
+    <p>Movies</p>
+</div>
 </div>
 </center>
 </body>
