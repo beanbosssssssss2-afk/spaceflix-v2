@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/nav.css">
     <link rel="icon" type="image/png" href="/logo.png"/>
     <link rel="shortcut icon" href="/logo.png"/>
     <style>
-        img {
+        .img-card img {
             width:200px;
             height:200px;
             box-shadow:0px 0px 10px white;
@@ -25,10 +26,28 @@
             box-sizing:border-box;
             border-radius:5px;
             cursor:pointer;
+            transition:0.5s ease-in-out;
+        }
+        .img-card:hover {
+            transform:scale(1.05);
         }
     </style>
 </head>
 <body>
+    <div class="top-center-glow"></div>
+    <div class="menu" id="menu">
+      <div class="grid">
+          <div class="icon home">
+              <img src="/logo.png">
+          </div>
+              <div class="icon settings" onclick="window.location.href='/settings.html'">
+                <i class="fa-regular fa-gear"></i>
+              </div>
+          <div onclick="window.location.href='/menu.html'" id="launchApps" class="icon movie">
+            <i class="fa-regular fa-film"></i>
+          </div>
+      </div>
+  </div>
     <br>
     <br>
     <br>

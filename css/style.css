@@ -38,6 +38,7 @@ body {
     transform: translate(-50%, -50%);
     filter: blur(150px);
     pointer-events: none;
+    z-index:99999;
   }
 
   header {
