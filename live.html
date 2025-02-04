@@ -10,6 +10,15 @@
     <link rel="icon" type="image/png" href="/logo.png"/>
     <link rel="shortcut icon" href="/logo.png"/>
     <link rel="stylesheet" href="/css/style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+                  if (!localStorage.getItem('alertShown')) {
+                      alert("STILL IN BETA. MORE SHOWS FROM DIFFERENT COUNTRIES WILL BE ADDED SOON.");
+      
+                      localStorage.setItem('alertShown', 'true');
+                  }
+              })
+              </script>
     <style>
         main {
             padding: 20px;
