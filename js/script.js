@@ -13,7 +13,7 @@ function handleSearch(event) {
     if (searchTerm) {
       fetchMovies(searchTerm);
     } else {
-      alert("Please enter a movie name to search.");
+      alert("Please enter a movie or TV show name to search.");
     }
   }
 }
@@ -21,12 +21,12 @@ function handleSearch(event) {
 async function fetchMovies(query) {
   try {
     const response = await fetch(
-      `${MOVIE_API_URL}/search/movie?api_key=${MOVIE_API_KEY}&query=${encodeURIComponent(query)}`
+      `${MOVIE_API_URL}/search/multi?api_key=${MOVIE_API_KEY}&query=${encodeURIComponent(query)}`
     );
     const { results } = await response.json();
     renderMovies(results);
   } catch (error) {
-    alert("Unable to retrieve movie data. Please try again later.");
+    alert("Unable to retrieve movie or TV show data. Please try again later.");
   }
 }
 
@@ -34,24 +34,25 @@ function renderMovies(movies) {
   const movieResults = document.createElement("div");
   movieResults.classList.add("movie-results");
 
-  movies.forEach((movie) => {
+  movies.forEach((item) => {
+    const isTV = item.media_type === "tv"; // Check if it's a TV show
     const movieCard = document.createElement("div");
     movieCard.classList.add("movie-card");
     movieCard.addEventListener("click", () => {
-      window.location.href = `player.html?movieid=${movie.id}`;
+      window.location.href = `player.html?movieid=${item.id}&tv=${isTV}`;
     });
 
     const poster = document.createElement("img");
-    poster.src = movie.poster_path
-      ? `${POSTER_BASE_URL}${movie.poster_path}`
+    poster.src = item.poster_path
+      ? `${POSTER_BASE_URL}${item.poster_path}`
       : "https://via.placeholder.com/200x300?text=No+Image";
-    poster.alt = movie.title;
+    poster.alt = item.title || item.name;
     poster.onerror = function () {
       this.src = '/imagenotfound.png';
     };
 
     const title = document.createElement("h3");
-    title.textContent = movie.title;
+    title.textContent = item.title || item.name; // `title` for movies, `name` for TV shows
 
     movieCard.appendChild(poster);
     movieCard.appendChild(title);
@@ -59,7 +60,7 @@ function renderMovies(movies) {
   });
 
   contentContainer.innerHTML = `
-    <input id="movie-search" placeholder="Find your favorite movie...">
+    <input id="movie-search" placeholder="Find your favorite movie or show...">
   `;
   contentContainer.appendChild(movieResults);
 

@@ -19,11 +19,11 @@
       <h1>Loading Movie...</h1>
     </div>
     <select id="source-selector" class="source-selector">
-      <option value="vidlinkpro" selected>Default server (vidlink)</option>
-      <option value="embed-su">Server 2 (Movie Embed)</option>
-      <option value="moviesapiclub">Server 3 (Movie Club)</option>
+      <option value="vidlinkpro" selected>Default server (vidsrc-net)</option>
+      <option value="embed-su">Server 2 (vidsrc-in)</option>
+      <option value="moviesapiclub">Server 3 (vidsrc-pm)</option>
       <option value="vidbinge">Server 4 (VidBinge)</option>
-      <option value="vidsrcnet">Server 5 (vid src)</option>
+      <option value="vidsrcnet">Server 5 (vidsrc-xyz)</option>
       <option value="doubleembed">Server 6 (2embed)</option>
     </select>
   </main>
@@ -32,5 +32,34 @@
   </footer>
   <script src="/js/player.js"></script>
   <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+  <script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const iframe = document.querySelector('iframe');
+    
+    if (iframe) {
+        iframe.onload = function () {
+            try {
+                const iframeDoc = iframe.contentWindow;
+                
+                // Override window.open to prevent pop-ups
+                iframeDoc.open = function () { return null; };
+                iframeDoc.alert = function () { return null; };
+                iframeDoc.confirm = function () { return null; };
+                iframeDoc.prompt = function () { return null; };
+                
+                // Prevents links opening new tabs
+                iframeDoc.document.addEventListener('click', function (event) {
+                    if (event.target.tagName === 'A' && event.target.target === '_blank') {
+                        event.preventDefault();
+                    }
+                }, true);
+            } catch (error) {
+                console.warn('Unable to modify iframe due to cross-origin restrictions');
+            }
+        };
+    }
+});
+
+  </script>
 </body>
 </html>
