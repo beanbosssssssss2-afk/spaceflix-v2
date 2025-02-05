@@ -4,36 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SpaceFlix - TV</title>  
+    <title>SpaceFlix - TV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
-    <link rel="icon" type="image/png" href="/logo.png"/>
-    <link rel="shortcut icon" href="/logo.png"/>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="shortcut icon" href="/logo.png" />
     <link rel="stylesheet" href="/css/style.css">
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-                  if (!localStorage.getItem('alertShown')) {
-                      alert("STILL IN BETA. MORE SHOWS FROM DIFFERENT COUNTRIES WILL BE ADDED SOON.");
-      
-                      localStorage.setItem('alertShown', 'true');
-                  }
-              })
-              </script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (!localStorage.getItem('alertShown')) {
+                alert("STILL IN BETA. MORE SHOWS FROM DIFFERENT COUNTRIES WILL BE ADDED SOON.");
+
+                localStorage.setItem('alertShown', 'true');
+            }
+        })
+    </script>
     <style>
         main {
             padding: 20px;
         }
+
         video {
             width: 100%;
             height: auto;
             background: black;
         }
+
         #country-select,
         #stream-select {
-            height:30px;
-            width:400px;
+            height: 30px;
+            width: 400px;
             font-family: 'Be Vietnam Pro', sans-serif;
-            font-size:20px;
+            font-size: 20px;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -46,7 +48,7 @@
     <main>
         <div id="controls">
             <select id="country-select"></select>
-<br>
+            <br>
             <select id="stream-select"></select>
         </div>
         <br>
@@ -55,52 +57,9 @@
     </main>
 
     <script>
-        document.addEventListener("DOMContentLoaded", async () => {
-            const countrySelect = document.getElementById("country-select");
-            const streamSelect = document.getElementById("stream-select");
-            const videoPlayer = document.getElementById("video-player");
-            
-            // Fetch available countries and streams
-            async function loadCountries() {
-                try {
-                    const response = await fetch("countries.json"); // Replace with actual API endpoint
-                    const countries = await response.json();
-                    countrySelect.innerHTML = countries.map(country => `<option value="${country.code}">${country.name}</option>`).join('');
-                    loadStreams(countries[0].code);
-                } catch (error) {
-                    console.error("Error loading countries:", error);
-                }
-            }
-            
-            async function loadStreams(countryCode) {
-                try {
-                    const response = await fetch(`streams/${countryCode}.json`); // Replace with actual API endpoint
-                    const streams = await response.json();
-                    streamSelect.innerHTML = streams.map(stream => `<option value="${stream.url}">${stream.name}</option>`).join('');
-                    playStream(streams[0].url);
-                } catch (error) {
-                    console.error("Error loading streams:", error);
-                }
-            }
-            
-            function playStream(url) {
-                if (Hls.isSupported()) {
-                    const hls = new Hls();
-                    hls.loadSource(url);
-                    hls.attachMedia(videoPlayer);
-                    hls.on(Hls.Events.MANIFEST_PARSED, () => videoPlayer.play());
-                } else if (videoPlayer.canPlayType('application/vnd.apple.mpegurl')) {
-                    videoPlayer.src = url;
-                    videoPlayer.addEventListener('loadedmetadata', () => videoPlayer.play());
-                }
-            }
-            
-            countrySelect.addEventListener("change", () => loadStreams(countrySelect.value));
-            streamSelect.addEventListener("change", () => playStream(streamSelect.value));
-            
-            loadCountries();
-        });
+        function _0x3ad3(_0x4f72d1, _0x56ac3c) { const _0x55d776 = _0x55d7(); return _0x3ad3 = function (_0x3ad38e, _0x2449f2) { _0x3ad38e = _0x3ad38e - 0x18b; let _0x1b8bc4 = _0x55d776[_0x3ad38e]; return _0x1b8bc4; }, _0x3ad3(_0x4f72d1, _0x56ac3c); } const _0x202260 = _0x3ad3; (function (_0x825b5b, _0xc477e6) { const _0x29c4ef = _0x3ad3, _0x192872 = _0x825b5b(); while (!![]) { try { const _0x3bd840 = -parseInt(_0x29c4ef(0x1ac)) / 0x1 + -parseInt(_0x29c4ef(0x191)) / 0x2 * (-parseInt(_0x29c4ef(0x19b)) / 0x3) + parseInt(_0x29c4ef(0x1a1)) / 0x4 * (parseInt(_0x29c4ef(0x195)) / 0x5) + -parseInt(_0x29c4ef(0x192)) / 0x6 + parseInt(_0x29c4ef(0x19d)) / 0x7 * (-parseInt(_0x29c4ef(0x19e)) / 0x8) + -parseInt(_0x29c4ef(0x1ae)) / 0x9 * (-parseInt(_0x29c4ef(0x19a)) / 0xa) + -parseInt(_0x29c4ef(0x197)) / 0xb * (-parseInt(_0x29c4ef(0x1a9)) / 0xc); if (_0x3bd840 === _0xc477e6) break; else _0x192872['push'](_0x192872['shift']()); } catch (_0x5654fc) { _0x192872['push'](_0x192872['shift']()); } } }(_0x55d7, 0xd14f9), document[_0x202260(0x1ab)]('DOMContentLoaded', async () => { const _0x1f8989 = _0x202260, _0x25f3a6 = document[_0x1f8989(0x1a4)](_0x1f8989(0x19c)), _0x9c4979 = document[_0x1f8989(0x1a4)](_0x1f8989(0x1b0)), _0x2005d5 = document[_0x1f8989(0x1a4)]('video-player'); async function _0x246dcf() { const _0x477893 = _0x1f8989; try { const _0x52e4d1 = await fetch('countries.json'), _0x38d3c0 = await _0x52e4d1[_0x477893(0x19f)](); _0x25f3a6['innerHTML'] = _0x38d3c0[_0x477893(0x1a8)](_0x40c6a6 => '<option\x20value=\x22' + _0x40c6a6['code'] + '\x22>' + _0x40c6a6[_0x477893(0x1ad)] + _0x477893(0x18d))[_0x477893(0x18e)](''), _0xf2413c(_0x38d3c0[0x0][_0x477893(0x18b)]); } catch (_0x342ed1) { console['error']('Error\x20loading\x20countries:', _0x342ed1); } } async function _0xf2413c(_0x2827fa) { const _0x1a9b0c = _0x1f8989; try { const _0x1de399 = await fetch('streams/' + _0x2827fa + _0x1a9b0c(0x18c)), _0x4bacc8 = await _0x1de399[_0x1a9b0c(0x19f)](); _0x9c4979[_0x1a9b0c(0x1a6)] = _0x4bacc8[_0x1a9b0c(0x1a8)](_0x5ccd74 => _0x1a9b0c(0x1aa) + _0x5ccd74[_0x1a9b0c(0x199)] + '\x22>' + _0x5ccd74[_0x1a9b0c(0x1ad)] + _0x1a9b0c(0x18d))[_0x1a9b0c(0x18e)](''), _0x161215(_0x4bacc8[0x0][_0x1a9b0c(0x199)]); } catch (_0x483ce8) { console[_0x1a9b0c(0x1a3)](_0x1a9b0c(0x190), _0x483ce8); } } function _0x161215(_0x198fe0) { const _0x4822dd = _0x1f8989; if (Hls[_0x4822dd(0x1a5)]()) { const _0x2ee42e = new Hls(); _0x2ee42e['loadSource'](_0x198fe0), _0x2ee42e[_0x4822dd(0x193)](_0x2005d5), _0x2ee42e['on'](Hls[_0x4822dd(0x1af)][_0x4822dd(0x198)], () => _0x2005d5[_0x4822dd(0x1a7)]()); } else _0x2005d5[_0x4822dd(0x1a0)](_0x4822dd(0x18f)) && (_0x2005d5['src'] = _0x198fe0, _0x2005d5['addEventListener'](_0x4822dd(0x194), () => _0x2005d5[_0x4822dd(0x1a7)]())); } _0x25f3a6[_0x1f8989(0x1ab)](_0x1f8989(0x1a2), () => _0xf2413c(_0x25f3a6['value'])), _0x9c4979['addEventListener'](_0x1f8989(0x1a2), () => _0x161215(_0x9c4979[_0x1f8989(0x196)])), _0x246dcf(); })); function _0x55d7() { const _0x32e4e7 = ['stream-select', 'code', '.json', '</option>', 'join', 'application/vnd.apple.mpegurl', 'Error\x20loading\x20streams:', '74TCPXIB', '5345442cGqwQE', 'attachMedia', 'loadedmetadata', '555iAIvmd', 'value', '7535UCFkCy', 'MANIFEST_PARSED', 'url', '124460OGBRsy', '87594itGjHl', 'country-select', '7529235ABmKkD', '8qAXnPR', 'json', 'canPlayType', '10088xEUjyw', 'change', 'error', 'getElementById', 'isSupported', 'innerHTML', 'play', 'map', '46140PIyVkB', '<option\x20value=\x22', 'addEventListener', '1220028lGCgrC', 'name', '36KWuHIe', 'Events']; _0x55d7 = function () { return _0x32e4e7; }; return _0x55d7(); }
     </script>
 </body>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
 
 </html>
