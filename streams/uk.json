@@ -1,0 +1,5 @@
+[
+    { "name": "BBC One", "url": "https://example.com/bbcone.m3u8" },
+    { "name": "Sky News", "url": "https://example.com/skynews.m3u8" },
+    { "name": "ITV Live", "url": "https://example.com/itv.m3u8" }
+]
