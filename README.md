@@ -5,7 +5,6 @@
 </p>
 
 <h1 align="center">Explore through thousands of shows and movies, all in one place!</h1>
-[Live Demo](https://s-f.pages.dev/)
 <h2 align="center">SpaceFlix features:</h2>
 <li>Thousands of media</li>
 <li>Live TV system</li>
