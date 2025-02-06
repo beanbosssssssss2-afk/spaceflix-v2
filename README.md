@@ -6,14 +6,11 @@
 
 <p align="center">Explore through thousands of shows and movies, all in one place!</p>
 <h1 align="center"><a align="center" href="//s-f.pages.dev">Live demo</a></h1>
-
-### Features:
-- 400+ games
-- automatic about:blank system
+## Spaceflix has:
+- Thousands of media
+- Live TV system
 - Clean UI
-- Blazing Fast proxy
-- Chatting system
-- Themes and optional tab cloak.
+- Customizable Settings
 # Credits
 - <a href="//github.com/albibos">Albinus - Original spaceflix name</a>
 - <a href="//github.com/willoo0">Willo - CSS designer and advisor</a>
