@@ -4,7 +4,7 @@
 <p align="center"><img src="https://github.com/GalacticNetwork/spaceflix-v2/blob/main/image/logobanner.png?raw=true" height="200">
 </p>
 
-<h3>Explore through thousands of shows and movies, all in one place!</h3>
+<h1 align="center">Explore through thousands of shows and movies, all in one place!</h1>
 [Live Demo](https://s-f.pages.dev/)
 <h2 align="center">SpaceFlix features:</h2>
 <li>Thousands of media</li>
