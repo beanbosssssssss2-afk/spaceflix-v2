@@ -1,6 +1,5 @@
 > [!IMPORTANT]
 > Please consider giving this respritory a star if you feel like it.
-# 
 <p align="center"><img src="https://github.com/GalacticNetwork/spaceflix-v2/blob/main/image/logobanner.png?raw=true" height="200">
 </p>
 
