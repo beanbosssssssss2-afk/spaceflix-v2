@@ -5,8 +5,8 @@
 </p>
 
 <p align="center">Explore through thousands of shows and movies, all in one place!</p>
-<h1 align="center"><a align="center" href="//s-f.pages.dev">Live demo</a></h1>
-## Spaceflix has:
+<h3 align="center"><a align="center" href="//s-f.pages.dev">Live demo</a></h3>
+<h3>SpaceFlix features:</h3>
 - Thousands of media
 - Live TV system
 - Clean UI
