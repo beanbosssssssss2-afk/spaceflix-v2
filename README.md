@@ -19,7 +19,3 @@
 <a target="_blank" href="https://github.com/GalacticNetwork/jordansmathwork-v6/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=GalacticNetwork/jordansmathwork-v6" />
 </a>
-### contributers:
-<a target="_blank" href="https://github.com/GalacticNetwork/jordansmathwork-v6/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=GalacticNetwork/jordansmathwork-v6" />
-</a>
