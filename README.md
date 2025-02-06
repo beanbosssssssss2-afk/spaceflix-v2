@@ -1,7 +1,7 @@
 > [!IMPORTANT]
 > Please consider giving this respritory a star if you feel like it.
 # 
-<img src="https://github.com/GalacticNetwork/spaceflix-v2/blob/main/image/logobanner.png?raw=true" height="200">
+<p align="center"><img src="https://github.com/GalacticNetwork/spaceflix-v2/blob/main/image/logobanner.png?raw=true" height="200">
 </p>
 
 # Explore through thousands of shows and movies, all in one place!
