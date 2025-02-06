@@ -29,4 +29,14 @@
   </div>
 </body>
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <script>
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.keyCode === 85) {
+        e.preventDefault();
+    }
+});
+</script>
 </html>
