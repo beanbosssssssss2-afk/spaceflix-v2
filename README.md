@@ -11,11 +11,11 @@
 - Live TV system
 - Clean UI
 - Customizable Settings
-# Credits
+<h3>Credits</h3>
 - <a href="//github.com/albibos">Albinus - Original spaceflix name</a>
 - <a href="//github.com/willoo0">Willo - CSS designer and advisor</a>
 - <a href="//github.com/JustJxrdanWasDefinetlyTaken">JRDN - The whole website</a>
-### contributers:
+<h3>Contributers:</h3>
 <a target="_blank" href="https://github.com/GalacticNetwork/spaceflix-v2/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=GalacticNetwork/spaceflix-v2" />
 </a>
