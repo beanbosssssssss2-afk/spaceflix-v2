@@ -1,0 +1,44 @@
+#container {
+    width:400px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    background:#222;
+    border-radius: 10px;
+    height:300px;
+    padding:5px;
+    margin:10px;
+}
+#settings {
+    flex-wrap:wrap;
+    display:flex;
+    gap:10px;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--btn-accent);
+    transition: .4s;
+    border-radius: 34px;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--accent);
+    transition: .4s;
+    border-radius: 50%;
+  }
+  input:checked + .slider {
+    background-color: #292626;
+  }
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }

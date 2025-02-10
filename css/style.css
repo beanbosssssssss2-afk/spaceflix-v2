@@ -6,6 +6,20 @@ body {
     color: #fff;
   }
 
+  button {
+    cursor: pointer;
+    background-color: rgba(107, 63, 169, 1);
+    color: white;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'be vietnam pro', sans-serif;
+    transition:0.5s ease-in-out;
+  }
+  button:hover {
+    transform:scale(1.05);
+  }
+
   .diagonal-left-glow {
     position: absolute;
     top: 0;

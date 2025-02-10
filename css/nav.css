@@ -1,7 +1,7 @@
 .menu {
     position: fixed;
     left: 50%;
-    top: 5%;
+    top: 4%;
     width: 16vw;
     transform: translateX(-50%);
     background-color: rgb(37, 1, 67);

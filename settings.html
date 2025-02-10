@@ -9,8 +9,39 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/settings.css">
     <link rel="icon" type="image/png" href="/logo.png"/>
     <link rel="shortcut icon" href="/logo.png"/>
+    <style>
+      .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--btn-accent);
+    transition: .4s;
+    border-radius: 34px;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--accent);
+    transition: .4s;
+    border-radius: 50%;
+  }
+  input:checked + .slider {
+    background-color: #292626;
+  }
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+    </style>
 </head>
 <body>
     <div class="top-center-glow"></div>
@@ -29,19 +60,49 @@
         <a href="/settings.html"><i class="fa-regular fa-gear"></i> Settings</a>
       </div>
     </div>
-    <h1>Settings</h1>
+    <center>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div id="settings">
+      <div id="container">
+        <h3>Password Protection</h3>
     <button id="toggleBtn" onclick="toggleProtection()">Loading...</button>
-    <p id="status">Checking status...</p>
-    <button onclick="logout()">Logout</button>
+    <br>
+    <button onclick="logout()" style="width:100px;margin:10px;">Logout</button>
+  </div>
+  <div id="container">
+    <h3>About:blank</h3>
+    <p>Make your link have a low chance of being blocked.</p>
+    <center><button class="btn" onclick="enableAboutBlank()">Enable</button></center>
+    <br>
+    <center><button class="btn" onclick="disableAboutBlank()">Disable</button></center>
+</div>
+<div id="container">
+  <h3>Anti-Tab closer</h3>
+  <p>Make your link have a low chance of being blocked.</p>
+  <center><button class="btn" id="enableLeavePopup">Enable</button></center>
+  <br>
+  <center><button class="btn" id="disableLeavePopup">Disable</button></center>
+</div>
+</div>
+  </center>
+  <p id="status" style="display:none;">Checking status...</p>
 </body>
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
 <script>
   function logout() {
+    if (localStorage.getItem("passwordProtection") !== "enabled") {
+        alert("Password protection is not enabled.");
+        return;
+    }
+
     localStorage.removeItem("user");
     localStorage.removeItem("pass");
     localStorage.removeItem("lastLogin");
     window.location.href = "/login.html";
-}
+  }
 </script>
 <script>
   function checkSession() {
@@ -150,4 +211,6 @@
 
 </script>
 <script src="/js/pp.js"></script>
+<script src="/js/ab.js"></script>
+<script src="/js/tp.js"></script>
 </html>
