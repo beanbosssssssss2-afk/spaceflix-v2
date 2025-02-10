@@ -56,10 +56,10 @@
     cursor: pointer;
     font-size: 30px;
     right:0;
+    transition:0.3s;
 }
 
   .dropdown-content {
-    margin:5px;
     position: absolute;
     top: 50px;
     background-color: transparent;
@@ -73,7 +73,7 @@
 }
 
 .dropdown-content a {
-    margin:12px;
+    margin:5px;
     color: white;
     padding: 10px;
     text-decoration: none;
