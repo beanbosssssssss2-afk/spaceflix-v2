@@ -59,12 +59,12 @@
 }
 
   .dropdown-content {
+    margin:5px;
     position: absolute;
     top: 50px;
     background-color: transparent;
     min-width: 150px;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px white;
     border: 2px solid white;
     padding: 5px;
     z-index: 999;
@@ -82,6 +82,7 @@
     overflow: hidden;
     transition:0.3s ease-in-out;
     border-radius:10px;
+    background-color:rgba(107, 63, 169, 1);
 }
 
 .dropdown-content a:hover {
