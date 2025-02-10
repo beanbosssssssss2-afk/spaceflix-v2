@@ -36,7 +36,7 @@
     <br>
     <br>
     <h1>SpaceFlix</h1>
-    <p>Movies, at any time, any moment.</p>
+    <h3 id="welcomeMessage">Welcome, </h3>
   </header>
   <main>
     <input id="movie-search" placeholder="Find your favorite movie or show...">
@@ -54,7 +54,6 @@
       dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
   }
 
-  // Close dropdown if clicked outside
   document.addEventListener("click", function(event) {
       var dropdown = document.getElementById("dropdownMenu");
       var dropdownIcon = document.querySelector(".dropdown");
@@ -97,4 +96,48 @@
     }
 });
 </script>
+<script>
+// Check if user is logged in and display their username
+        function checkUser() {
+            let storedUser = localStorage.getItem("user");
+
+            if (!storedUser || localStorage.getItem("passwordProtection") === "enabled" && !localStorage.getItem("lastLogin")) {
+                // Redirect to login if user isn't logged in
+                window.location.href = "/login.html";
+                return;
+            }
+
+            document.getElementById("welcomeMessage").innerText = `Welcome, ${storedUser}!`;
+        }
+
+
+        // Session Timeout Script
+        (function () {
+            if (localStorage.getItem("passwordProtection") === "enabled") {
+                let storedUser = localStorage.getItem("user");
+                let lastLogin = localStorage.getItem("lastLogin");
+
+                if (!storedUser || !lastLogin) {
+                    // Redirect to login if no user exists
+                    window.location.href = "/login.html";
+                    return;
+                }
+
+                const lastLoginTime = new Date(lastLogin);
+                const currentTime = new Date();
+                const diffInHours = (currentTime - lastLoginTime) / (1000 * 60 * 60);
+
+                if (diffInHours > 3) {
+                    alert("Your session has expired. Please log in again.");
+                    localStorage.removeItem("user");
+                    localStorage.removeItem("pass");
+                    localStorage.removeItem("lastLogin");
+                    window.location.href = "/login.html";
+                }
+            }
+        })();
+
+        window.onload = checkUser;
+      </script>
+<script src="/js/pp.js"></script>
 </html>

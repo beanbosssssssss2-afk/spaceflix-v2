@@ -35,7 +35,7 @@ function renderMovies(movies) {
   movieResults.classList.add("movie-results");
 
   movies.forEach((item) => {
-    const isTV = item.media_type === "tv"; // Check if it's a TV show
+    const isTV = item.media_type === "tv";
     const movieCard = document.createElement("div");
     movieCard.classList.add("movie-card");
     movieCard.addEventListener("click", () => {
@@ -52,7 +52,7 @@ function renderMovies(movies) {
     };
 
     const title = document.createElement("h3");
-    title.textContent = item.title || item.name; // `title` for movies, `name` for TV shows
+    title.textContent = item.title || item.name;
 
     movieCard.appendChild(poster);
     movieCard.appendChild(title);

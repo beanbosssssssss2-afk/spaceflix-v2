@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <style>
+        input {
+            width:300px;
+            height:20px;
+            padding:10px;
+            border-radius:10px;
+            outline: none;
+            background-color:#333;
+            border:none;
+            color:white;
+            margin:5px;
+        }
+        button {
+      cursor: pointer;
+      background-color: rgba(107, 63, 169, 1);
+      color: white;
+      height: 50px;
+      width:170px;
+      border: none;
+      border-radius: 10px;
+      font-family: 'be vietnam pro', sans-serif;
+      transition:0.5s ease-in-out;
+      margin:5px;
+    }
+    button:hover {
+      transform:scale(1.05);
+    }
+    .container {
+            width: 300px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            background-color:#111;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <img src="/image/logobanner.png" style="width:150px;">
+    <h1>Sign Up</h1>
+    <input type="text" id="username" placeholder="Enter Username">
+    <br>
+    <input type="password" id="password" placeholder="Enter Password">
+    <br>
+    <button onclick="signUp()">Sign Up</button>
+    <br>
+    <a href="/login.html">Have an account? Log in!</a>
+</center>
+</div>
+<script>
+    function signUp() {
+        if (localStorage.getItem("passwordProtection") !== "enabled") {
+            alert("Password protection is not enabled in settings.");
+            return;
+        }
+
+        let username = document.getElementById("username").value.trim();
+        let password = document.getElementById("password").value;
+
+        // Check if username and password meet the length requirements
+        if (username.length < 5) {
+            alert("Username must be at least 5 characters long.");
+            return;
+        }
+
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long.");
+            return;
+        }
+
+        // Check if username or password already exists
+        let existingUser = localStorage.getItem("user");
+        let existingPass = localStorage.getItem("pass");
+
+        if (username === existingUser) {
+            alert("Username already exists. Please choose a different username.");
+            return;
+        }
+
+        if (password === existingPass) {
+            alert("Password already in use. Please choose a different password.");
+            return;
+        }
+
+        if (!username || !password) {
+            alert("Please enter a username and password.");
+            return;
+        }
+
+        localStorage.setItem("user", username);
+        localStorage.setItem("pass", password);
+        alert(`Sign-up successful! Use the same username and password to log in.`);
+        
+        // Redirect to login page after sign-up
+        location.replace('/login.html');
+    }
+</script>
+</body>
+</html>

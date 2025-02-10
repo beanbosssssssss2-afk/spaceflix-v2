@@ -42,13 +42,11 @@
             try {
                 const iframeDoc = iframe.contentWindow;
                 
-                // Override window.open to prevent pop-ups
                 iframeDoc.open = function () { return null; };
                 iframeDoc.alert = function () { return null; };
                 iframeDoc.confirm = function () { return null; };
                 iframeDoc.prompt = function () { return null; };
                 
-                // Prevents links opening new tabs
                 iframeDoc.document.addEventListener('click', function (event) {
                     if (event.target.tagName === 'A' && event.target.target === '_blank') {
                         event.preventDefault();
@@ -72,5 +70,6 @@
     }
 });
 </script>
+<script src="/js/pp.js"></script>
 </body>
 </html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <style>
+        input {
+            width:300px;
+            height:20px;
+            padding:10px;
+            border-radius:10px;
+            outline: none;
+            background-color:#333;
+            border:none;
+            color:white;
+            margin:5px;
+        }
+        button {
+      cursor: pointer;
+      background-color: rgba(107, 63, 169, 1);
+      color: white;
+      height: 50px;
+      width:170px;
+      border: none;
+      border-radius: 10px;
+      font-family: 'be vietnam pro', sans-serif;
+      transition:0.5s ease-in-out;
+      margin:5px;
+    }
+    button:hover {
+      transform:scale(1.05);
+    }
+    .container {
+            width: 300px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            background-color:#111;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <img src="/image/logobanner.png" style="width:170px;">
+    <h1>Login</h1>
+    <input type="text" id="loginUsername" placeholder="Enter Username">
+    <input type="password" id="loginPassword" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+    <br>
+    <a href="/signup.html">Don't have an account? Sign up!</a>
+</center>
+</div>
+    <h1 id="welcomeMessage" style="display: none;"></h1>
+
+    <script>
+        function login() {
+            let username = document.getElementById("loginUsername").value;
+            let password = document.getElementById("loginPassword").value;
+    
+            let storedUser = localStorage.getItem("user");
+            let storedPass = localStorage.getItem("pass");
+    
+            if (username === storedUser && password === storedPass) {
+                localStorage.setItem("lastLogin", new Date().toISOString()); // Store login time
+    
+                alert("Login successful!");
+                location.replace('/'); // Redirect to welcome page after login
+            } else {
+                alert("Incorrect username or password.");
+            }
+        }
+    </script>    
+</body>
+</html>

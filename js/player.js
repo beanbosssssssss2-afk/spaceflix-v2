@@ -1,6 +1,6 @@
 const queryParams = new URLSearchParams(window.location.search);
 const movieId = queryParams.get("movieid");
-const isTV = queryParams.get("tv") === "true"; // Check if it's a TV show
+const isTV = queryParams.get("tv") === "true";
 
 const videoContainer = document.getElementById("video-container");
 const sourceSelector = document.getElementById("source-selector");
@@ -36,7 +36,7 @@ function initializePlayer(provider) {
         baseUrl = "https://vidsrc.net/embed";
     }
 
-    const contentType = isTV ? "tv" : "movie"; // Change URL if it's a TV show
+    const contentType = isTV ? "tv" : "movie";
     iframeElement.src = `${baseUrl}/${contentType}/${movieId}${provider === "vidlinkpro" ? "?autoplay=false" : ""}`;
 
     videoContainer.innerHTML = "";

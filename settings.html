@@ -16,19 +16,91 @@
     <div class="top-center-glow"></div>
     <div class="menu" id="menu">
       <div class="grid">
-          <div class="icon home" onclick="window.location.href='/'">
-              <img src="/logo.png">
-          </div>
-              <div class="icon settings" onclick="window.location.href='/settings.html'">
-                <i class="fa-regular fa-gear"></i>
-              </div>
-          <div onclick="window.location.href='/menu.html'" id="launchApps" class="icon movie">
-            <i class="fa-regular fa-film"></i>
-          </div>
+        <div class="icon home" onclick="window.location.href='/'">
+          <img src="/logo.png">
+        </div>
+        <div class="icon dropdown" onclick="toggleDropdown()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </div>
-  </div>
+      <div id="dropdownMenu" class="dropdown-content" style="display: none;">
+        <a href="/movies.html"><i class="fa-regular fa-film"></i> Movies</a>
+        <a href="/live.html"><i class="fa-regular fa-tv-retro"></i> Live TV</a>
+        <a href="/settings.html"><i class="fa-regular fa-gear"></i> Settings</a>
+      </div>
+    </div>
+    <h1>Settings</h1>
+    <button id="toggleBtn" onclick="toggleProtection()">Loading...</button>
+    <p id="status">Checking status...</p>
+    <button onclick="logout()">Logout</button>
 </body>
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+<script>
+  function logout() {
+    localStorage.removeItem("user");
+    localStorage.removeItem("pass");
+    localStorage.removeItem("lastLogin");
+    window.location.href = "/login.html";
+}
+</script>
+<script>
+  function checkSession() {
+      if (localStorage.getItem("passwordProtection") === "enabled") {
+          let storedUser = localStorage.getItem("user");
+          let lastLogin = localStorage.getItem("lastLogin");
+
+          if (!storedUser) {
+              // Redirect to signup if no user exists
+              window.location.href = "signup.html";
+              return;
+          }
+
+          if (storedUser && lastLogin) {
+              const lastLoginTime = new Date(lastLogin);
+              const currentTime = new Date();
+              const diffInHours = (currentTime - lastLoginTime) / (1000 * 60 * 60);
+
+              if (diffInHours > 3) {
+                  alert("Your session has expired. Please log in again.");
+                  localStorage.removeItem("user");
+                  localStorage.removeItem("pass");
+                  localStorage.removeItem("lastLogin");
+                  window.location.href = "login.html";
+              }
+          }
+      }
+  }
+
+  function toggleProtection() {
+      let currentStatus = localStorage.getItem("passwordProtection");
+
+      if (currentStatus === "enabled") {
+          localStorage.setItem("passwordProtection", "disabled");
+          document.getElementById("status").innerText = "Password protection is OFF";
+          document.getElementById("toggleBtn").innerText = "Enable Password Protection";
+      } else {
+          localStorage.setItem("passwordProtection", "enabled");
+          document.getElementById("status").innerText = "Password protection is ON";
+          document.getElementById("toggleBtn").innerText = "Disable Password Protection";
+
+          // Check if user exists, if not, redirect to signup
+          if (!localStorage.getItem("user")) {
+              window.location.href = "signup.html";
+          }
+      }
+  }
+
+  window.onload = function() {
+      checkSession();
+      if (localStorage.getItem("passwordProtection") === "enabled") {
+          document.getElementById("status").innerText = "Password protection is ON";
+          document.getElementById("toggleBtn").innerText = "Disable Password Protection";
+      } else {
+          document.getElementById("status").innerText = "Password protection is OFF";
+          document.getElementById("toggleBtn").innerText = "Enable Password Protection";
+      }
+  };
+</script>
     <script>
   document.addEventListener('keydown', function (e) {
     if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
@@ -39,4 +111,43 @@
     }
 });
 </script>
+<script>
+  function toggleDropdown() {
+    var dropdown = document.getElementById("dropdownMenu");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+  }
+
+  document.addEventListener("click", function (event) {
+    var dropdown = document.getElementById("dropdownMenu");
+    var dropdownIcon = document.querySelector(".dropdown");
+    if (!dropdown.contains(event.target) && !dropdownIcon.contains(event.target)) {
+      dropdown.style.display = "none";
+    }
+  });
+</script>
+<script>
+  document.querySelectorAll(".dropdown-content a").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      let ripple = document.createElement("span");
+      ripple.classList.add("ripple");
+
+      let rect = this.getBoundingClientRect();
+      let size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = `${size}px`;
+
+      let x = e.clientX - rect.left - size / 2;
+      let y = e.clientY - rect.top - size / 2;
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+
+      this.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  });
+
+</script>
+<script src="/js/pp.js"></script>
 </html>
