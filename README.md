@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> Please consider giving this respritory a star if you feel like it.
+> Please consider giving this respritory a star to support us!
 # 
 <p align="center"><img src="https://github.com/GalacticNetwork/spaceflix-v2/blob/main/image/logobanner.png?raw=true" height="100">
 </p>
