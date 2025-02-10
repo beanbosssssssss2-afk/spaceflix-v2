@@ -97,48 +97,51 @@
 });
 </script>
 <script>
-// Check if user is logged in and display their username
-        function checkUser() {
-            let storedUser = localStorage.getItem("user");
+  function checkUser() {
+    if (localStorage.getItem("passwordProtection") !== "enabled") {
+        document.getElementById("welcomeMessage").innerText = "Shows and movies, anytime, anywhere.";
+        return;
+    }
 
-            if (!storedUser || localStorage.getItem("passwordProtection") === "enabled" && !localStorage.getItem("lastLogin")) {
-                // Redirect to login if user isn't logged in
-                window.location.href = "/login.html";
-                return;
-            }
+    let storedUser = localStorage.getItem("user");
 
-            document.getElementById("welcomeMessage").innerText = `Welcome, ${storedUser}!`;
-        }
+    if (!storedUser || !localStorage.getItem("lastLogin")) {
+        window.location.href = "/login.html";
+        return;
+    }
 
+    document.getElementById("welcomeMessage").innerText = `Welcome, ${storedUser}!`;
+  }
 
-        // Session Timeout Script
-        (function () {
-            if (localStorage.getItem("passwordProtection") === "enabled") {
-                let storedUser = localStorage.getItem("user");
-                let lastLogin = localStorage.getItem("lastLogin");
+  (function () {
+    if (localStorage.getItem("passwordProtection") !== "enabled") {
+        return;
+    }
 
-                if (!storedUser || !lastLogin) {
-                    // Redirect to login if no user exists
-                    window.location.href = "/login.html";
-                    return;
-                }
+    let storedUser = localStorage.getItem("user");
+    let lastLogin = localStorage.getItem("lastLogin");
 
-                const lastLoginTime = new Date(lastLogin);
-                const currentTime = new Date();
-                const diffInHours = (currentTime - lastLoginTime) / (1000 * 60 * 60);
+    if (!storedUser || !lastLogin) {
+        window.location.href = "/login.html";
+        return;
+    }
 
-                if (diffInHours > 3) {
-                    alert("Your session has expired. Please log in again.");
-                    localStorage.removeItem("user");
-                    localStorage.removeItem("pass");
-                    localStorage.removeItem("lastLogin");
-                    window.location.href = "/login.html";
-                }
-            }
-        })();
+    const lastLoginTime = new Date(lastLogin);
+    const currentTime = new Date();
+    const diffInHours = (currentTime - lastLoginTime) / (1000 * 60 * 60);
 
-        window.onload = checkUser;
-      </script>
+    if (diffInHours > 3) {
+        alert("Your session has expired. Please log in again.");
+        localStorage.removeItem("user");
+        localStorage.removeItem("pass");
+        localStorage.removeItem("lastLogin");
+        window.location.href = "/login.html";
+    }
+  })();
+
+  window.onload = checkUser;
+</script>
 <script src="/js/pp.js"></script>
+<script src="/js/tp.js"></script>
 <script src="/js/ab.js"></script>
 </html>
