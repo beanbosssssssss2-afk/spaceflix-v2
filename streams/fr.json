@@ -1,5 +1,10 @@
 [
-    { "name": "TF1", "url": "https://example.com/tf1.m3u8" },
-    { "name": "France 2", "url": "https://example.com/france2.m3u8" },
-    { "name": "M6", "url": "https://example.com/m6.m3u8" }
+    { "name": "Toonami", "url": "https://adultswim-vodlive.cdn.turner.com/live/toonami/stream_de.m3u8" },
+    { "name": "4Kurd TV", "url": "https://4kuhls.persiana.live/hls/stream.m3u8" },
+    { "name": "MyZenTV", "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01255-secomcofites-my-myzen-en-plex/playlist.m3u8" },
+    { "name": "Persiana Korea", "url": "https://korhls.persiana.live/hls/stream.m3u8" },
+    { "name": "XilamTV", "url": "https://xilam-animation-1-fr.samsung.wurl.tv/playlist.m3u8" },
+    { "name": "FashionTV", "url": "https://68f1accef2154d2195cae87dec183843.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RakutenTV-eu_FashionTV/playlist.m3u8" },
+    { "name": "FX", "url": "https://toonixhls.wns.live/hls/stream.m3u8" },
+    { "name": "HolyGodTV", "url": "https://128989.gvideo.io/streams/128989_522806/playlist.m3u8" }
 ]

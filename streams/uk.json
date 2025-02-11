@@ -1,5 +1,9 @@
 [
-    { "name": "BBC One", "url": "https://example.com/bbcone.m3u8" },
-    { "name": "Sky News", "url": "https://example.com/skynews.m3u8" },
-    { "name": "ITV Live", "url": "https://example.com/itv.m3u8" }
+    { "name": "Ahlulbayt TV", "url": "https://cdn5.iqsat.net/iqb02/35fae546b99b61a038d52353487e8190.sdp/playlist.m3u8" },
+    { "name": "BBC News Asia Pacific", "url": "https://cdn4.skygo.mn/live/disk1/BBC_News/HLSv3-FTA/BBC_News.m3u8" },
+    { "name": "Beano TV", "url": "https://beanostudios-beanotv-1-gb.samsung.wurl.tv/playlist.m3u8" },
+    { "name": "Channel S (United Kingdom)", "url": "https://cdn149.anystream.uk:8082/g1/tvchsuk03/playlist.m3u8"},
+    { "name": "CNBC Europe", "url": "https://amg01079-nbcuuk-amg01079c1-samsung-es-1261.playouts.now.amagi.tv/playlist/amg01079-nbcuukfast-cnbcpe-samsunges/playlist.m3u8"},
+    { "name": "DiscoverFilm", "url": "https://discoverfilm-discoverfilm-1-nl.samsung.wurl.tv/playlist.m3u8"},
+    { "name": "The FBI Files", "url": "https://apollo.production-public.tubi.io/live/ac-the-fbi-files.m3u8"}
 ]
