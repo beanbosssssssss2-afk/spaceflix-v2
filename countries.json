@@ -3,6 +3,5 @@
     { "code": "uk", "name": "United Kingdom" },
     { "code": "de", "name": "Germany" },
     { "code": "fr", "name": "France" },
-    { "code": "jp", "name": "Japan" },
-    { "code": "turkey", "name": "Turkey" }
+    { "code": "jp", "name": "Japan" }
 ]

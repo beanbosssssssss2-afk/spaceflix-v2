@@ -70,7 +70,6 @@
         let username = document.getElementById("username").value.trim();
         let password = document.getElementById("password").value;
 
-        // Check if username and password meet the length requirements
         if (username.length < 5) {
             alert("Username must be at least 5 characters long.");
             return;
@@ -81,7 +80,6 @@
             return;
         }
 
-        // Check if username or password already exists
         let existingUser = localStorage.getItem("user");
         let existingPass = localStorage.getItem("pass");
 
@@ -104,9 +102,16 @@
         localStorage.setItem("pass", password);
         alert(`Sign-up successful! Use the same username and password to log in.`);
         
-        // Redirect to login page after sign-up
         location.replace('/login.html');
     }
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QJL1WD9ZG6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QJL1WD9ZG6');
 </script>
 </body>
 <script src="/js/tp.js"></script>

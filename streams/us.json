@@ -11,5 +11,7 @@
     { "name": "Paramount Network", "url": "https://fl2.moveonjoy.com/PARAMOUNT_NETWORK/index.m3u8" },
     { "name": "PBS Kids", "url": "https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8" },
     { "name": "Adult Swim The Venture Bros", "url": "https://adultswim-vodlive.cdn.turner.com/live/venture-bros/stream_de.m3u8" },
-    { "name": "Adult Swim Your Pretty Face Is Going To Hell", "url": "https://adultswim-vodlive.cdn.turner.com/live/ypf/stream_de.m3u8" }
+    { "name": "Adult Swim Your Pretty Face Is Going To Hell", "url": "https://adultswim-vodlive.cdn.turner.com/live/ypf/stream_de.m3u8" },
+    { "name": "Adult Swim Robot Chicken", "url": "https://adultswim-vodlive.cdn.turner.com/live/robot-chicken/stream_de.m3u8"},
+    { "name": "Adult Swim Samurai Jack", "url": "https://adultswim-vodlive.cdn.turner.com/live/samurai-jack/stream_de.m3u8"}
 ]

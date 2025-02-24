@@ -4,7 +4,6 @@
         let lastLogin = localStorage.getItem("lastLogin");
 
         if (!storedUser || !lastLogin) {
-            // Redirect to login if user is not logged in
             window.location.href = "/login.html";
             return;
         }

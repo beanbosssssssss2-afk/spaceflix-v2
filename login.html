@@ -69,15 +69,23 @@
             let storedPass = localStorage.getItem("pass");
     
             if (username === storedUser && password === storedPass) {
-                localStorage.setItem("lastLogin", new Date().toISOString()); // Store login time
+                localStorage.setItem("lastLogin", new Date().toISOString());
     
                 alert("Login successful!");
-                location.replace('/'); // Redirect to welcome page after login
+                location.replace('/');
             } else {
                 alert("Incorrect username or password.");
             }
         }
     </script>    
 </body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QJL1WD9ZG6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QJL1WD9ZG6');
+</script>
 <script src="/js/ab.js"></script>
 </html>
