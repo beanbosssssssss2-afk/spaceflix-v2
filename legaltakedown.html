@@ -44,5 +44,45 @@
         <p><a href="mailto:galacticnetworkbuisness@gmail.com">galacticnetworkbuisness@gmail.com</a></p>
     </div>
 </body>
-
+<script src="/js/pp.js"></script>
+<script src="/js/tp.js"></script>
+<script src="/js/ab.js"></script>
+<script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("dropdownMenu");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+  
+    document.addEventListener("click", function (event) {
+      var dropdown = document.getElementById("dropdownMenu");
+      var dropdownIcon = document.querySelector(".dropdown");
+      if (!dropdown.contains(event.target) && !dropdownIcon.contains(event.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+  </script>
+  <script>
+    document.querySelectorAll(".dropdown-content a").forEach((link) => {
+      link.addEventListener("click", function (e) {
+        let ripple = document.createElement("span");
+        ripple.classList.add("ripple");
+  
+        let rect = this.getBoundingClientRect();
+        let size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = `${size}px`;
+  
+        let x = e.clientX - rect.left - size / 2;
+        let y = e.clientY - rect.top - size / 2;
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+  
+        this.appendChild(ripple);
+  
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+  
+  </script>
 </html>
