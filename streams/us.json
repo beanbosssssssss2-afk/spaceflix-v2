@@ -1,6 +1,7 @@
 [
     { "name": "ABC News", "url": "https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8" },
     { "name": "NBC Live", "url": "https://livetv-fa.tubi.video/nbc-news-now/master.m3u8" },
+    { "name": "Cartoon Network", "url": "https://fl2.moveonjoy.com/CARTOON_NETWORK/index.m3u8" },
     { "name": "Nickelodeon", "url": "https://fl1.moveonjoy.com/NICKELODEON/index.m3u8" },
     { "name": "NickToons", "url": "https://fl1.moveonjoy.com/NICKTOONS/index.m3u8" },
     { "name": "Disney XD", "url": "https://fl5.moveonjoy.com/DISNEY_XD/index.m3u8" },
