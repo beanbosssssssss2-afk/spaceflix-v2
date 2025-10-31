@@ -5,7 +5,9 @@ const POSTER_BASE_URL = "https://image.tmdb.org/t/p/w500";
 const searchField = document.getElementById("movie-search");
 const contentContainer = document.querySelector("main");
 
-searchField.addEventListener("keypress", handleSearch);
+if (searchField) {
+  searchField.addEventListener("keypress", handleSearch);
+}
 
 function handleSearch(event) {
   if (event.key === "Enter") {
@@ -39,6 +41,12 @@ function renderMovies(movies) {
     const movieCard = document.createElement("div");
     movieCard.classList.add("movie-card");
     movieCard.addEventListener("click", () => {
+      try {
+        sessionStorage.setItem(
+          "selectedContent",
+          JSON.stringify({ id: item.id, isTV })
+        );
+      } catch (e) {}
       window.location.href = `player.html?movieid=${item.id}&tv=${isTV}`;
     });
 
@@ -60,10 +68,12 @@ function renderMovies(movies) {
   });
 
   contentContainer.innerHTML = `
-    <input id="movie-search" placeholder="Find your favorite movie or show...">
+    <input id=\"movie-search\" placeholder=\"Find your favorite movie or show...\">
   `;
   contentContainer.appendChild(movieResults);
 
   const newSearchField = document.getElementById("movie-search");
-  newSearchField.addEventListener("keypress", handleSearch);
+  if (newSearchField) {
+    newSearchField.addEventListener("keypress", handleSearch);
+  }
 }
