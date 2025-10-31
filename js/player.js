@@ -1,6 +1,16 @@
 const queryParams = new URLSearchParams(window.location.search);
-const movieId = queryParams.get("movieid");
-const isTV = queryParams.get("tv") === "true";
+let movieId = queryParams.get("movieid");
+let isTV = queryParams.get("tv");
+
+if (!movieId) {
+  try {
+    const cached = JSON.parse(sessionStorage.getItem("selectedContent") || "null");
+    if (cached && cached.id) {
+      movieId = String(cached.id);
+      isTV = String(!!cached.isTV);
+    }
+  } catch (e) {}
+}
 
 const videoContainer = document.getElementById("video-container");
 const sourceSelector = document.getElementById("source-selector");
@@ -11,7 +21,7 @@ function initializePlayer(provider) {
     iframeElement.allow = "autoplay; fullscreen";
     iframeElement.allowFullscreen = true;
 
-    let baseUrl = ""; 
+    let baseUrl = "";
 
     switch (provider) {
       case "vidsrc-net":
@@ -32,22 +42,34 @@ function initializePlayer(provider) {
       case "2embed":
         baseUrl = "https://www.2embed.skin/embed";
         break;
+      case "vidlinkpro":
+        baseUrl = "https://vidlink.pro";
+        break;
       default:
         baseUrl = "https://vidsrc.net/embed";
     }
 
-    const contentType = isTV ? "tv" : "movie";
-    iframeElement.src = `${baseUrl}/${contentType}/${movieId}${provider === "vidlinkpro" ? "?autoplay=false" : ""}`;
+    const tv = String(isTV) === "true";
+    const contentType = tv ? "tv" : "movie";
+
+    let src = `${baseUrl}/${contentType}/${movieId}`;
+    if (provider === "vidlinkpro") {
+      src += "?autoplay=false";
+    }
+
+    iframeElement.src = src;
 
     videoContainer.innerHTML = "";
     videoContainer.appendChild(iframeElement);
-  } else {
+  } else if (videoContainer) {
     videoContainer.innerHTML = "<h1>Error: Content not found</h1>";
   }
 }
 
 initializePlayer("vidlinkpro");
 
-sourceSelector.addEventListener("change", (event) => {
-  initializePlayer(event.target.value);
-});
+if (sourceSelector) {
+  sourceSelector.addEventListener("change", (event) => {
+    initializePlayer(event.target.value);
+  });
+}

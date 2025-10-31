@@ -1,6 +1,6 @@
 let isLeavePopupEnabled = JSON.parse(localStorage.getItem('leavePopupEnabled'));
 
-if (isLeavePopupEnabled === null) {
+if (typeof isLeavePopupEnabled !== 'boolean') {
     isLeavePopupEnabled = false;
 }
 
@@ -11,24 +11,38 @@ window.addEventListener('beforeunload', function (e) {
     }
 });
 
-document.getElementById('enableLeavePopup').addEventListener('click', function () {
-    isLeavePopupEnabled = true;
-    localStorage.setItem('leavePopupEnabled', JSON.stringify(isLeavePopupEnabled));
-
-    alert('Enabled!');
-});
-
-document.getElementById('disableLeavePopup').addEventListener('click', function () {
-    isLeavePopupEnabled = false;
-    localStorage.setItem('leavePopupEnabled', JSON.stringify(isLeavePopupEnabled));
-
-    alert('Disabled..');
-});
-
-if (isLeavePopupEnabled) {
-    document.getElementById('enableLeavePopup').disabled = true;
-    document.getElementById('disableLeavePopup').disabled = false;
-} else {
-    document.getElementById('enableLeavePopup').disabled = false;
-    document.getElementById('disableLeavePopup').disabled = true;
+function updateLeavePopupButtons(enableBtn, disableBtn) {
+    if (!enableBtn || !disableBtn) return;
+    if (isLeavePopupEnabled) {
+        enableBtn.disabled = true;
+        disableBtn.disabled = false;
+    } else {
+        enableBtn.disabled = false;
+        disableBtn.disabled = true;
+    }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const enableBtn = document.getElementById('enableLeavePopup');
+    const disableBtn = document.getElementById('disableLeavePopup');
+
+    if (enableBtn) {
+        enableBtn.addEventListener('click', function () {
+            isLeavePopupEnabled = true;
+            localStorage.setItem('leavePopupEnabled', JSON.stringify(isLeavePopupEnabled));
+            updateLeavePopupButtons(enableBtn, disableBtn);
+            alert('Enabled!');
+        });
+    }
+
+    if (disableBtn) {
+        disableBtn.addEventListener('click', function () {
+            isLeavePopupEnabled = false;
+            localStorage.setItem('leavePopupEnabled', JSON.stringify(isLeavePopupEnabled));
+            updateLeavePopupButtons(enableBtn, disableBtn);
+            alert('Disabled..');
+        });
+    }
+
+    updateLeavePopupButtons(enableBtn, disableBtn);
+});
