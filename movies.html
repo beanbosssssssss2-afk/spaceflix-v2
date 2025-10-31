@@ -3,20 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SpaceFlix - Home</title>
+  <title>CamoFlix - Home</title>
   <link rel="manifest" href="/manifest.json"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/nav.css">
-  <link rel="icon" type="image/png" href="/logo.png"/>
-  <link rel="shortcut icon" href="/logo.png"/>
+  <link rel="icon" type="image/png" href="https://cdn.builder.io/api/v1/image/assets%2F03a4f5f37c3b495dbfbcb1c1ddca3b66%2F082eb89a7ed64aa1b4e4dd0d5654290a?format=webp&width=800"/>
+  <link rel="shortcut icon" href="https://cdn.builder.io/api/v1/image/assets%2F03a4f5f37c3b495dbfbcb1c1ddca3b66%2F082eb89a7ed64aa1b4e4dd0d5654290a?format=webp&width=800"/>
 </head>
-<body>
+<body class="has-sidebar">
+  <nav class="sidebar">
+    <a class="sidebar-brand" href="/">
+      <img class="brand-logo brand-logo-black" src="https://cdn.builder.io/api/v1/image/assets%2F03a4f5f37c3b495dbfbcb1c1ddca3b66%2F082eb89a7ed64aa1b4e4dd0d5654290a?format=webp&width=800" alt="CamoFlix logo">
+      <span class="brand-name">CamoFlix</span>
+    </a>
+    <div class="sidebar-nav">
+      <a class="sidebar-link" href="/movies.html"><i class="fa-regular fa-film"></i> Movies</a>
+      <a class="sidebar-link" href="/live.html"><i class="fa-regular fa-tv-retro"></i> Live TV</a>
+      <a class="sidebar-link" href="/settings.html"><i class="fa-regular fa-gear"></i> Settings</a>
+    </div>
+  </nav>
   <div class="menu" id="menu">
     <div class="grid">
         <div class="icon home" onclick="window.location.href='/'">
-            <img src="/logo.png">
+            <img class="brand-logo brand-logo-black" src="https://cdn.builder.io/api/v1/image/assets%2F03a4f5f37c3b495dbfbcb1c1ddca3b66%2F082eb89a7ed64aa1b4e4dd0d5654290a?format=webp&width=800">
         </div>
         <div class="icon dropdown" onclick="toggleDropdown()">
             <i class="fa-solid fa-bars"></i>
@@ -35,7 +46,7 @@
     <br>
     <br>
     <br>
-    <h1>SpaceFlix</h1>
+    <h1>CamoFlix</h1>
     <h3 id="welcomeMessage">Welcome, </h3>
   </header>
   <main>

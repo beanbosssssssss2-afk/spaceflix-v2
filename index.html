@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/nav.css">
-  <link rel="icon" type="image/png" href="/logo.png" />
-  <link rel="shortcut icon" href="/logo.png" />
+  <link rel="icon" type="image/png" href="https://cdn.builder.io/api/v1/image/assets%2F03a4f5f37c3b495dbfbcb1c1ddca3b66%2F082eb89a7ed64aa1b4e4dd0d5654290a?format=webp&width=800" />
+  <link rel="shortcut icon" href="https://cdn.builder.io/api/v1/image/assets%2F03a4f5f37c3b495dbfbcb1c1ddca3b66%2F082eb89a7ed64aa1b4e4dd0d5654290a?format=webp&width=800" />
   <style>
     body {
       overflow-x: hidden;
@@ -19,7 +19,7 @@
 
     button {
       cursor: pointer;
-      background-color: rgba(107, 63, 169, 1);
+      background-color: rgb(15, 58, 125);
       color: white;
       height: 50px;
       border: none;
@@ -42,12 +42,23 @@
   </style>
 </head>
 
-<body>
+<body class="has-sidebar">
+  <nav class="sidebar">
+    <a class="sidebar-brand" href="/">
+      <img class="brand-logo brand-logo-black" src="https://cdn.builder.io/api/v1/image/assets%2F03a4f5f37c3b495dbfbcb1c1ddca3b66%2F082eb89a7ed64aa1b4e4dd0d5654290a?format=webp&width=800" alt="CamoFlix logo">
+      <span class="brand-name">CamoFlix</span>
+    </a>
+    <div class="sidebar-nav">
+      <a class="sidebar-link" href="/movies.html"><i class="fa-regular fa-film"></i> Movies</a>
+      <a class="sidebar-link" href="/live.html"><i class="fa-regular fa-tv-retro"></i> Live TV</a>
+      <a class="sidebar-link" href="/settings.html"><i class="fa-regular fa-gear"></i> Settings</a>
+    </div>
+  </nav>
   <div class="diagonal-left-glow"></div>
   <div class="menu" id="menu">
     <div class="grid">
       <div class="icon home" onclick="window.location.href='/'">
-        <img src="/logo.png">
+        <img class="brand-logo brand-logo-black" src="https://cdn.builder.io/api/v1/image/assets%2F03a4f5f37c3b495dbfbcb1c1ddca3b66%2F082eb89a7ed64aa1b4e4dd0d5654290a?format=webp&width=800">
       </div>
       <div class="icon dropdown" onclick="toggleDropdown()">
         <i class="fa-solid fa-bars"></i>
@@ -73,7 +84,7 @@
         <h1 style="padding:10px;position:absolute;font-size:8vh;right:0;left:0;">Watching movies, with no cost.</h1>
 <br>
         <h2 style="padding:20px;position:relative;font-size:5vh;right:0;left:0;margin-top:200px;">Watch your favorite
-          anime, show, movie, news, all of it on SpaceFlix!</h2>
+          anime, show, movie, news, all of it on CamoFlix!</h2>
         <button onclick="window.location.href='/movies.html'">Start Watching!</button>
       </center>
     </header>
@@ -89,15 +100,15 @@
   document.addEventListener('DOMContentLoaded', () => {
 
     const titles = [
-      "SpaceFlix | The ultimate streaming platform.",
-      "SpaceFlix | A reliable streaming platform.",
-      "SpaceFlix | Entertainment, on us.",
-      "SpaceFlix | Your movie awaits!",
-      "SpaceFlix | Brought to you by Galactic Network!",
-      "SpaceFlix | Watch movies the better way.",
-      "SpaceFlix | Reach through the stars for movies!",
-      "SpaceFlix | The art of streaming.",
-      "SpaceFlix | The best way to binge watch."
+      "CamoFlix | The ultimate streaming platform.",
+      "CamoFlix | A reliable streaming platform.",
+      "CamoFlix | Entertainment, on us.",
+      "CamoFlix | Your movie awaits!",
+      "CamoFlix | Brought to you by Galactic Network!",
+      "CamoFlix | Watch movies the better way.",
+      "CamoFlix | Reach through the stars for movies!",
+      "CamoFlix | The art of streaming.",
+      "CamoFlix | The best way to binge watch."
     ];
 
     function setRandomTitle() {
