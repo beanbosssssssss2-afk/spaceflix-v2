@@ -1,21 +1,62 @@
-/* Update Log modal styles – matches existing rounded blue look */
+/* Update Log modal styles – Fixed to ensure buttons are visible */
 .update-log-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:10000;opacity:1;transition:opacity .25s ease}
 .update-log-overlay.hidden{opacity:0;pointer-events:none}
 
-.update-log-container{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:92%;max-width:520px;background-color:rgb(10, 20, 60);border:2px solid white;box-shadow:0 0 16px white;border-radius:12px;color:#cfe3ff;z-index:10001;padding:16px;display:flex;flex-direction:column;gap:12px}
+.update-log-container{
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:92%;
+    max-width:520px;
+    /* FIX 1: Set a maximum height to fit the viewport */
+    max-height: 90vh; 
+    background-color:rgb(10, 20, 60);
+    border:2px solid white;
+    box-shadow:0 0 16px white;
+    border-radius:12px;
+    color:#cfe3ff;
+    z-index:10001;
+    padding:16px;
+    display:flex;
+    flex-direction:column;
+    /* Removed gap: 12px; to allow content to flex correctly */
+}
 .update-log-container.hidden{opacity:0;pointer-events:none;transform:translate(-50%,-48%)}
 
-.update-log-header{display:flex;align-items:center;justify-content:space-between}
+.update-log-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-bottom: 12px;
+    flex-shrink: 0; /* Ensures header height is fixed */
+}
 .update-log-title-wrapper{display:flex;align-items:center;gap:10px}
 .update-log-title{font-size:20px;margin:0}
 .update-log-version-pill{font-size:12px;background:rgb(15, 58, 125);color:#fff;border-radius:999px;padding:4px 10px;border:1px solid rgba(255,255,255,.35)}
 
-.update-log-content{font-size:14px;line-height:1.5}
+.update-log-content{
+    font-size:14px;
+    line-height:1.5;
+    /* FIX 2: Makes content scrollable and fill remaining vertical space */
+    overflow-y: auto; 
+    flex-grow: 1; 
+    padding-bottom: 0; 
+}
 .update-log-list{margin:0 0 8px 18px;padding:0}
 .update-log-list li{margin:6px 0}
 .update-log-meta{opacity:.8;margin:8px 0 0 0;font-size:12px}
 
-.update-log-footer{display:flex;justify-content:flex-end;gap:8px;margin-top:4px}
+.update-log-footer{
+    /* FIX 3: Ensures footer height is fixed and adds spacing */
+    padding-top: 12px; 
+    flex-shrink: 0; 
+    
+    display:flex;
+    justify-content:flex-end;
+    gap:8px;
+    margin-top:4px
+}
 .update-log-btn{display:inline-flex;align-items:center;justify-content:center;min-width:120px;height:40px;padding:0 14px;background-color:rgb(15, 58, 125);color:#fff;text-decoration:none;border:none;border-radius:10px;cursor:pointer;transition:.3s ease-in-out}
 .update-log-btn:hover{transform:scale(1.05)}
 .update-log-btn-secondary{background-color:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
@@ -26,6 +67,10 @@
 .update-log-page .page-overlay{opacity:.6}
 
 @media (max-width: 480px){
-  .update-log-container{width:94%;padding:14px}
-  .update-log-title{font-size:18px}
+  .update-log-container{
+      width:94%;
+      padding:14px;
+      max-height: 96vh;
+  }
+  .update-log-title{font-size:18px}
 }
